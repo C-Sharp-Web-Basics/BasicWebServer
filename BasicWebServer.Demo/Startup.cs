@@ -38,11 +38,11 @@ namespace BasicWebServer.Demo
 
         public static async Task Main()
         {
-            await DownloadSitesAsTextFile(Startup.FileName,
-                new string[] { "https://judge.softuni.org/", "https://softuni.org/" });
+            //await DownloadSitesAsTextFile(Startup.FileName,
+            //    new string[] { "https://judge.softuni.org/", "https://softuni.org/" });
 
             var server = new HttpServer(routes => routes
-               .MapGet("/", new TextResponse("Hello from the server!"))
+               .MapGet("/", new TextResponse("Hello from the server!")) 
                .MapGet("/Redirect", new RedirectResponse("https://softuni.org/"))
                .MapGet("/HTML", new HtmlResponse(Startup.HtmlForm))
                .MapPost("/HTML", new TextResponse("", Startup.AddFormDataAction))
